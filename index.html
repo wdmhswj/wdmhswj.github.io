@@ -152,6 +152,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ARM汇编实验作业1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/01/14/ARM%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%BD%9C%E4%B8%9A1/">ARM汇编实验作业1</a>
+    </h1>
+  
+
+        
+        <a href="/2023/01/14/ARM%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%BD%9C%E4%B8%9A1/" class="archive-article-date">
+  	<time datetime="2023-01-14T06:11:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作业要求：
+
+	<div class="row">
+    <embed src="/pdf/ARM汇编实验作业1.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</p>
+<p>汇报代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line">	AREA	program, CODE, READONLY</span><br><span class="line">matrix_mul</span><br><span class="line">	EXPORT	matrix_mul</span><br><span class="line"></span><br><span class="line">    ; Please write your code below that will implement:</span><br><span class="line">    ;       int matrix_mul(Matrix *results, const Matrix *source1, const Matrix *source2);</span><br><span class="line">	PUSH &#123;R3-R10,FP,LR&#125;	;</span><br><span class="line">	MOV FP,SP			;</span><br><span class="line">	SUB SP,SP,#32		;6 local variables</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	;LDR	R0,results		;R0 &lt;- results</span><br><span class="line">	;LDR R1,source1		;R1 &lt;- source1</span><br><span class="line">	;LDR R2,source2		;R2 &lt;- source2</span><br><span class="line">	</span><br><span class="line">	LDR R4,[R1,#4]		;R4 &lt;- source1-&gt;column</span><br><span class="line">	LDR R5,[R2]			;R5 &lt;- source2-&gt;row</span><br><span class="line">	CMP R4,R5			;compare source1-&gt;column and source2-&gt;row</span><br><span class="line">	BNE finish_1</span><br><span class="line">	LDR R3,[R1]			;R3 &lt;- source1-&gt;row</span><br><span class="line">	LDR R6,[R0]			;R6 &lt;- results-row</span><br><span class="line">	CMP R6,R3		    ;compare results-&gt;row and source1-&gt;row</span><br><span class="line">	BNE finish_1</span><br><span class="line">	LDR R7,[R2,#4]		;R7 &lt;- source2-&gt;column</span><br><span class="line">	LDR R8,[R0,#4]		;R8 &lt;- results-&gt;column</span><br><span class="line">	CMP R8,R7			;compare results-&gt;column and source2-&gt;column</span><br><span class="line">	BNE finish_1</span><br><span class="line">	</span><br><span class="line">	MOV R9,SP			;R9 &lt;- SP</span><br><span class="line">	STR R3,[R9],#4		;[SP]    &lt;- R3, R9 &lt;- SP+#4</span><br><span class="line">	STR R4,[R9],#4		;[SP+#4] &lt;- R4, R9 &lt;- SP+#8</span><br><span class="line">	STR R5,[R9],#4		;[SP+#8] &lt;- R5, R9 &lt;- SP+#12</span><br><span class="line">	STR R6,[R9],#4 		;[SP+#12]&lt;- R6, R9 &lt;- SP+#16</span><br><span class="line"></span><br><span class="line">	STR R7,[R9],#4		;[SP+#16]&lt;- R7, R9 &lt;- SP+#20</span><br><span class="line">	STR R8,[R9],#4		;[SP+#20]&lt;- R8, R9 &lt;- SP+#24</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	MOV R4,#0			;i=0</span><br><span class="line">	MOV R5,#0			;j=0</span><br><span class="line">	STR R4,[R9],#4		;[SP+#24]&lt;- R4=i, R9 &lt;- SP+#28</span><br><span class="line">	STR R5,[R9],#4		;[SP+#28]&lt;- R5=j, R9 &lt;- SP+#32</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	MOV R6,#0			;R6=k=0</span><br><span class="line">	MOV R7,#0			;R7=(i * col1 + k)*#4=0</span><br><span class="line">	MOV R8,#0			;R8=(k * col2 + j)*#4=0</span><br><span class="line">	MOV R9,#0			;R9=(i * col2 + j)*#4=0</span><br><span class="line">	MOV R10,#0			;R10=results-&gt;data[i][j]=0</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">loop3</span><br><span class="line">	LDR R4,[R1,#8]		;R4=source1-&gt;data</span><br><span class="line">	LDR R4,[R4,R7]		;R4=source1-&gt;data[i][k]</span><br><span class="line">	LDR R5,[R2,#8]		;R5=source2-&gt;data</span><br><span class="line">	LDR R5,[R5,R8]		;R5=source2-&gt;data[k][j]</span><br><span class="line">	MLA R10,R4,R5,R10	;R10=R10+source1-&gt;data[i][k]*source2-&gt;data[k][j]</span><br><span class="line">	ADD R6,#1			;k++</span><br><span class="line">	</span><br><span class="line">	ADD R7,#4			;R7=R7+#4</span><br><span class="line">	LDR R3,[SP,#16]		;R3=source2-&gt;column</span><br><span class="line">	MOV R5,#4			;R5=#4</span><br><span class="line">	MLA R8,R3,R5,R8		;R8=R8+col2*#4</span><br><span class="line">	</span><br><span class="line">	LDR R3,[SP,#8]		;R3=source2-&gt;row</span><br><span class="line">	CMP R6,R3			;compare k and R3</span><br><span class="line">	BNE loop3</span><br><span class="line">	</span><br><span class="line">loop2 </span><br><span class="line">	LDR R3,[R0,#8]		;R3=results-&gt;data</span><br><span class="line">	STR R10,[R3,R9];	;resulta-&gt;data[i][j]=R10</span><br><span class="line">	MOV R10,#0			;R10=0</span><br><span class="line">	</span><br><span class="line">	MOV R3,#4			;R3=#4</span><br><span class="line">	MUL R4,R3,R6		;R4=k*#4</span><br><span class="line">	SUB R7,R7,R4		;R7=(i * col1 + k)*#4=i*col1*#4</span><br><span class="line">	</span><br><span class="line">	MOV R6,#0			;k=0</span><br><span class="line">	</span><br><span class="line">	LDR R4,[SP,#28]		;R4=j</span><br><span class="line">	ADD R4,#1			;R4++</span><br><span class="line">	STR R4,[SP,#28]		;j++</span><br><span class="line">	</span><br><span class="line">	MOV R5,#4			;R5=#4</span><br><span class="line">	MUL	R8,R4,R5		;R8=(k * col2 + j)*#4=j*#4</span><br><span class="line">	ADD R9,#4			;R9=R9+#4</span><br><span class="line">	</span><br><span class="line">	LDR R3,[SP,#16]		;R3=source2-&gt;column</span><br><span class="line">	CMP R4,R3			;compare j and R3</span><br><span class="line">	BNE loop3			;</span><br><span class="line">	</span><br><span class="line">loop1</span><br><span class="line"></span><br><span class="line">	LDR R3,[SP,#28]		;R3=j</span><br><span class="line">	MOV R4,#4			;R4=#4</span><br><span class="line">	MUL R5,R3,R4		;R5=j*#4</span><br><span class="line">	SUB R8,R8,R5		;R8=(k*col2+j)*#4=k*col2*#4</span><br><span class="line">	SUB R9,R9,R5		;R9=R9-j*#4</span><br><span class="line">	LDR R3,[SP,#16]		;R3=source2-&gt;column</span><br><span class="line">	MUL R5,R3,R4		;R5=col2*#4</span><br><span class="line">	ADD R9,R9,R5		;R9=(i+1)*col2*#4</span><br><span class="line">	</span><br><span class="line">	MOV R4,#0			;R4=0</span><br><span class="line">	STR R4,[SP,#28]		;j=R4=0</span><br><span class="line">	</span><br><span class="line">	LDR R4,[SP,#24]		;R4=i</span><br><span class="line">	ADD R4,#1			;R4++</span><br><span class="line">	STR R4,[SP,#24]		;i++</span><br><span class="line">	LDR R3,[SP,#4]		;R3=source1-&gt;column</span><br><span class="line">	MOV R5,#4			;R5=#4</span><br><span class="line">	MLA R7,R3,R5,R7		;R7=R7+col1*#4</span><br><span class="line">	</span><br><span class="line">	LDR R3,[SP]			;R3=source1-&gt;row</span><br><span class="line">	CMP R4,R3			;compare i and R3</span><br><span class="line">	BNE loop3</span><br><span class="line">	B finish_0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">finish_1</span><br><span class="line">	MOV R1,#1</span><br><span class="line">	B finish</span><br><span class="line">finish_0</span><br><span class="line">	MOV R1,#0</span><br><span class="line">	B finish</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">finish	</span><br><span class="line">	MOV R0,R1</span><br><span class="line">	MOV SP,FP</span><br><span class="line">	POP &#123;R3-R10,FP,LR&#125;</span><br><span class="line">	BX		LR</span><br><span class="line">	END</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计组</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/01/14/ARM%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%BD%9C%E4%B8%9A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-test-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -372,6 +456,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计组</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
